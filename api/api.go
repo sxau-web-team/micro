@@ -182,10 +182,10 @@ func run(ctx *cli.Context, srvOpts ...micro.Option) {
 
 	srvOpts = append(srvOpts, micro.Name(Name))
 	if i := time.Duration(ctx.Int("register_ttl")); i > 0 {
-		srvOpts = append(srvOpts, micro.RegisterTTL(i*time.Second))
+		srvOpts = append(srvOpts, micro.RegisterTTL(20*time.Second))
 	}
 	if i := time.Duration(ctx.Int("register_interval")); i > 0 {
-		srvOpts = append(srvOpts, micro.RegisterInterval(i*time.Second))
+		srvOpts = append(srvOpts, micro.RegisterInterval(20*time.Second))
 	}
 
 	// initialise service
